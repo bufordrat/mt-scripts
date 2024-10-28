@@ -8,6 +8,6 @@ then if emacs --version > /dev/null
      fi
 else if emacs --version > /dev/null
      then emacsclient -nw -a 'emacs -nw' "$@"
-     else vi "$@"
+     else vim "$@" || vi "$@" || echo 'no available $EDITOR in this terminal' 1>&2
      fi
 fi
