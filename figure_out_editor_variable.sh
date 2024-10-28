@@ -8,6 +8,6 @@ then if emacs --version > /dev/null
      fi
 else if emacs --version > /dev/null
      then emacsclient -nw -a 'emacs -nw' "$@"
-     else vim "$@"
+     else vi "$@"
      fi
 fi
