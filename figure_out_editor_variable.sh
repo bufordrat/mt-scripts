@@ -2,7 +2,7 @@
 
 if [ echo "$INSIDE_EMACS" | grep -q "tramp" ]
 then echo "no \$EDITOR over an ssh-tramp connection" ; exit 1
-elif [ -n "$TERM" = ansi ]
+elif [ "$TERM" = ansi ]
 then echo "no \$EDITOR when $TERM is 'ansi'" ; exit 1
 elif [ -n "$INSIDE_EMACS" -o 'emacs --version > /dev/null' ]
 then emacsclient -a emacs "$@"
