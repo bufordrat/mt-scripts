@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ echo "$INSIDE_EMACS" -o 'grep -q "tramp"' ]
+if [ 'echo "$INSIDE_EMACS" | grep -q "tramp"' ]
 then echo "no \$EDITOR over an ssh-tramp connection" ; exit 1
 elif [ "$TERM" = ansi ]
 then echo "no \$EDITOR when \$TERM is 'ansi'" ; exit 1
