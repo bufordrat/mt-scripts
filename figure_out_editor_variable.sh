@@ -1,4 +1,5 @@
 #!/bin/sh
+set -x
 
 if echo "$INSIDE_EMACS" | grep -q tramp
 then echo "no \$EDITOR over a tramp connection" ; exit 1
