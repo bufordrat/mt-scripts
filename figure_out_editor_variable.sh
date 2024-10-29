@@ -2,6 +2,7 @@
 
 if echo "$INSIDE_EMACS" | grep -q tramp
 then echo "no \$EDITOR over an ssh-tramp connection" ; exit 1
+# add 'and inside emacs doesn't contain tramp conunction to this elif
 elif [ "$TERM" = ansi ]
 then echo "no \$EDITOR when \$TERM is 'ansi'" ; exit 1
 elif [ -n "$INSIDE_EMACS" -o 'emacs --version > /dev/null' ]
