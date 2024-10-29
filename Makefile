@@ -1,4 +1,4 @@
-INSTALLDIR = /home/teichman/bin
+INSTALLDIR = ~/bin
 
 SCRIPTS = figure_out_editor_variable
 
