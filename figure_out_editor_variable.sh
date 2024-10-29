@@ -1,6 +1,4 @@
 #!/bin/sh
-set -x
-
 
 if echo "$INSIDE_EMACS" | grep -q tramp
 then # we are in an Emacs shell launched from a tramped location
@@ -17,15 +15,3 @@ else # we are in a straight terminal and possibly ssh-ed in somewhere
     else vim "$@" || vi "$@" || echo 'no available $EDITOR in this terminal' 1>&2
     fi
 fi
-
-    # if emacsclient --eval '(display-graphic-p)' | grep -xq nil
-    # then # the local Emacs shell is an -nw emacs
-    # 	if emacsclient --eval :ok | grep -xq :ok
-    # 	then # there is an Emacs server running
-    # 	    emacsclient -nw -a 'emacs -nw' "$@"
-    # 	else # there is no Emacs server running
-    # 	    emacs -nw "$@"
-    # 	fi
-    # else #the local Emacs shell is graphical
-    # 	emacsclient -a emacs "$@"
-    # fi
